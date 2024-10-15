@@ -1,0 +1,143 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #fdf1f2;
+    color: #333;
+}
+
+/* Header */
+header {
+    background-color: white;
+    padding: 15px 0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo h1 {
+    color: #ff5722;
+    font-size: 24px;
+}
+
+.logo p {
+    color: #999;
+    font-size: 14px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+}
+
+.login-btn a {
+    text-decoration: none;
+    background-color: #ff5722;
+    padding: 10px 20px;
+    color: white;
+    border-radius: 5px;
+}
+
+/* Hero Section */
+.hero {
+    background-color: #fce8e6;
+    padding: 50px 0;
+    text-align: center;
+}
+
+.hero-text {
+    margin-bottom: 30px;
+}
+
+.hero-text .intro {
+    color: #ff5722;
+    font-weight: bold;
+}
+
+.hero h1 {
+    color: #ff5722;
+    font-size: 36px;
+}
+
+.hero h2 {
+    color: #333;
+    font-size: 30px;
+}
+
+.highlight {
+    color: #ff5722;
+}
+
+.hero .description {
+    margin: 20px 0;
+    color: #666;
+}
+
+.cta-buttons {
+    margin: 20px 0;
+}
+
+.cta-buttons .btn {
+    padding: 15px 30px;
+    margin: 0 10px;
+    text-decoration: none;
+    color: white;
+    border-radius: 5px;
+}
+
+.explore-btn {
+    background-color: #ff5722;
+}
+
+.manage-btn {
+    background-color: #333;
+}
+
+/* Hero Images */
+.hero-images {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.image-frame {
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.image-frame img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.image-frame p {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    background-color: rgba(0, 0, 0, 0.6);
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+}

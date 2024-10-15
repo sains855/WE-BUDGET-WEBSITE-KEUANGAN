@@ -1,0 +1,62 @@
+PENJELASAN FITUR
+
+1.	Start Date dan End Date :
+•	Fitur ini berguna untuk memfilter transaksi yang ditampilkan dalam rentang waktu tertentu. Misalnya, pengguna dapat memilih rentang waktu dari 1 Januari hingga 31 Desember untuk melihat semua transaksi dalam tahun tersebut.
+•	Filter ini memudahkan pengguna untuk fokus pada periode tertentu, seperti bulanan atau tahunan, atau untuk melihat pengeluaran/pemasukan di antara dua tanggal tertentu.
+2.	Total Pemasukan :
+•	Fitur ini menghitung dan menampilkan jumlah keseluruhan pemasukan pengguna selama periode waktu tertentu. Data ini bisa mencakup berbagai sumber pendapatan seperti gaji, investasi, atau penjualan.
+•	Informasi ini ditampilkan secara otomatis, tanpa perlu menghitung manual, sehingga pengguna dapat melihat total pendapatan mereka dalam satu waktu.
+3.	Total Pengeluaran :
+•	Seperti total pemasukan, fitur ini mengkalkulasi semua pengeluaran yang tercatat. Pengguna bisa melihat berapa total uang yang sudah dikeluarkan dalam satu bulan, satu minggu, atau bahkan satu hari.
+•	Fitur ini membantu pengguna untuk lebih bijak dalam memantau pengeluaran mereka dan menganalisa pengeluaran terbesar berdasarkan kategori.
+4.	Selisih :
+•	Fitur ini menghitung selisih antara total pemasukan dan total pengeluaran. Jika pemasukan lebih besar dari pengeluaran, maka hasilnya adalah surplus, sebaliknya jika pengeluaran lebih besar, hasilnya adalah defisit.
+•	Fitur ini berguna sebagai pengukur kesehatan keuangan pengguna, apakah mereka berada dalam kondisi keuangan yang baik (surplus) atau perlu menekan pengeluaran (defisit).
+5.	Grafik Pemasukan dan Pengeluaran :
+•	Fitur ini menampilkan visualisasi data dalam bentuk grafik. Grafik ini dapat berbentuk grafik garis yang menunjukkan perbandingan pemasukan dan pengeluaran.
+•	Misalnya, pengguna bisa melihat grafik pengeluaran per kategori dalam sebulan, atau tren pemasukan selama setahun. Grafik ini membantu pengguna menganalisa tren keuangan mereka secara lebih mudah dan cepat.
+6.	New Kategori:
+•	Fitur ini memungkinkan pengguna menambahkan kategori khusus untuk setiap transaksi. Misalnya, jika ada pengeluaran yang tidak masuk dalam kategori umum, pengguna dapat membuat kategori baru seperti "Hiburan", "Edukasi", atau kategori spesifik lainnya.
+•	Dengan adanya kategori yang terstruktur, pengguna bisa lebih mudah melacak pengeluaran atau pemasukan berdasarkan jenis atau kegunaannya.
+
+7.	Search :
+•	Fitur pencarian memungkinkan pengguna menemukan transaksi tertentu dengan cepat. Misalnya, pengguna dapat mencari transaksi berdasarkan nama kategori, deskripsi transaksi, tanggal transaksi, atau bahkan jumlah uang yang terlibat.
+•	Dengan adanya fitur ini, pengguna tidak perlu lagi menelusuri seluruh transaksi secara manual untuk menemukan data spesifik.
+8.	Image :
+•	Fitur Image pada Webudget berfungsi sebagai penanda visual untuk transaksi tertentu, seperti transaksi terkait makanan atau pembelian lainnya. Gambar ini dapat digunakan untuk memberikan referensi visual yang memudahkan identifikasi transaksi tanpa harus membaca detail deskripsi.
+
+9.	Edit Column :
+•	Pengguna memiliki fleksibilitas untuk menyesuaikan kolom mana yang ditampilkan pada tabel transaksi. Misalnya, pengguna bisa memilih untuk menyembunyikan kolom "Deskripsi" atau "Kategori" jika merasa tidak perlu melihatnya.
+•	Fitur ini memberikan personalisasi lebih dalam tampilan data, sehingga hanya informasi yang relevan saja yang terlihat, sesuai dengan kebutuhan pengguna.
+10.	Mode Terang/Mode Malam :
+•	Pengguna dapat beralih antara Mode Terang dan Mode Malam. Mode terang memberikan tampilan standar dengan background terang dan teks gelap, sedangkan mode malam memberikan tampilan lebih gelap dengan teks terang.
+•	Fitur ini bermanfaat untuk menyesuaikan kenyamanan visual, terutama dalam kondisi pencahayaan yang rendah, untuk mengurangi kelelahan mata.
+11.	Perpage :
+•	Fitur ini memfasilitasi pengguna untuk mengontrol jumlah entri data yang ditampilkan di satu halaman. Misalnya, pengguna bisa memilih untuk melihat 10, 25, atau 50 transaksi per halaman.
+•	Fitur ini berguna untuk mengurangi beban loading halaman jika ada banyak data, serta membuat navigasi lebih mudah dengan mengurangi kelebihan informasi di satu layar.
+12.	Sign Out :
+•	Fitur ini memberikan pengguna opsi untuk keluar dari sistem secara aman, melindungi akun mereka dari akses yang tidak diizinkan.
+•	Setelah menekan tombol "Sign Out", sesi pengguna berakhir, dan pengguna harus login kembali untuk mengakses data keuangan mereka.
+13.	Kategori :
+•	Fitur ini digunakan untuk mengelompokkan transaksi ke dalam kategori yang spesifik. Pengguna dapat membuat dan memilih kategori seperti "Makanan", "Transportasi", "Hiburan", atau kategori lainnya.
+•	Dengan adanya kategori, pengguna dapat dengan mudah melacak dan menganalisis jenis pengeluaran atau pemasukan mereka. Ini membantu dalam perencanaan keuangan dan mengidentifikasi area di mana mereka mungkin menghabiskan terlalu banyak.
+
+14.	Transaksi :
+•	Fitur ini mencatat setiap transaksi yang dilakukan, baik itu pemasukan maupun pengeluaran. Setiap entri transaksi akan mencakup informasi detail seperti kategori, waktu, jumlah, dan catatan.
+
+15.	Pengeluaran :
+•	Fitur ini khusus mencatat semua pengeluaran yang dilakukan oleh pengguna. Setiap pengeluaran harus dikategorikan dan dicatat dengan informasi lainnya.
+•	Dengan memantau pengeluaran, pengguna bisa melihat di mana uang mereka pergi dan melakukan penyesuaian jika diperlukan untuk mencapai tujuan keuangan.
+16.	Waktu:
+•	Fitur ini merekam tanggal dan waktu saat transaksi dilakukan. Informasi ini sangat penting untuk melacak pola pengeluaran atau pemasukan dalam rentang waktu tertentu, seperti harian, mingguan, atau bulanan.
+•	Pengguna dapat menggunakan fitur ini untuk memfilter transaksi berdasarkan periode tertentu dan menganalisis kebiasaan pengeluaran mereka.
+17.	Jumlah :
+•	Fitur ini mencatat nilai uang dari setiap transaksi, baik untuk pemasukan maupun pengeluaran. Pengguna harus memasukkan jumlah yang relevan saat menambah atau mengedit transaksi.
+•	Pengelolaan jumlah yang akurat membantu pengguna memahami total keuangan mereka dan menganalisis surplus atau defisit.
+18.	Catatan :
+•	Fitur ini memungkinkan pengguna untuk menambahkan catatan atau deskripsi tambahan untuk setiap transaksi. Catatan ini bisa berisi informasi seperti rincian tambahan tentang transaksi, alasan pembelian, atau informasi penting lainnya.
+•	Dengan catatan ini, pengguna bisa kembali mengingat konteks atau alasan di balik setiap transaksi, yang membantu dalam menganalisis dan memahami pola keuangan mereka lebih baik.
+
+
+
+
