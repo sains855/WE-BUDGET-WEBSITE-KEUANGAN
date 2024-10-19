@@ -8,6 +8,7 @@ use Filament\Widgets\Concerns\InteractsWithPageFilters;
 use Filament\Widgets\ChartWidget;
 use Flowframe\Trend\Trend;
 use Flowframe\Trend\TrendValue;
+use Illuminate\Database\Eloquent\Builder;
 
 class outcomeChart extends ChartWidget
 {
@@ -19,13 +20,15 @@ class outcomeChart extends ChartWidget
     {
         $startDate = ! is_null($this->filters['startDate'] ?? null) ?
             Carbon::parse($this->filters['startDate']) :
-            null;
+            now()->startOfMonth();
 
         $endDate = ! is_null($this->filters['endDate'] ?? null) ?
             Carbon::parse($this->filters['endDate']) :
             now();
 
-        $data = Trend::query(Transaksi::outcome())
+        $data = Trend::query(Transaksi::query()
+            ->where('user_id', auth()->id())
+            ->outcome())
         ->between(
             start: $startDate,
             end: $endDate,

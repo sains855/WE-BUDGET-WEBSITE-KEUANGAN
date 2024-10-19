@@ -8,6 +8,7 @@ use Filament\Forms\Components\Select;
 use Filament\Forms\Form;
 use Filament\Forms\Get;
 use Filament\Pages\Dashboard as BaseDashboard;
+use Illuminate\Database\Eloquent\Builder;
 
 class Dashboard extends BaseDashboard
 {
@@ -27,5 +28,9 @@ class Dashboard extends BaseDashboard
                     ])
                     ->columns(2),
             ]);
+    }
+    public static function query(): Builder
+    {
+        return parent::query()->where('user_id', auth()->id());
     }
 }

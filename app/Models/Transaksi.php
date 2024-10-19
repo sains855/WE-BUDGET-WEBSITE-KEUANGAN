@@ -5,19 +5,20 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Builder;
 
 class Transaksi extends Model
 {
     use HasFactory;
 
     protected $fillable = [
-        'user_id',
         'nama',
         'kategori_id',
         'waktu',
+        'user_id',
         'Jumlah',
         'catatan',
-        'image'
+        'image',
     ];
 
     public function kategori(): BelongsTo
@@ -34,5 +35,10 @@ class Transaksi extends Model
         return $query->whereHas('kategori', function ($query){
             $query->where('keterangan', true);
         });
+    }
+
+    public static function query(): Builder
+    {
+        return parent::query()->where('user_id', auth()->id());
     }
 }

@@ -31,8 +31,15 @@ class KategoriResource extends Resource
                 Forms\Components\FileUpload::make('image')
                     ->image()
                     ->required(),
+                Forms\Components\Hidden::make('user_id')
+                    ->default(auth()->id())
             ]);
     }
+
+    public static function query(): Builder
+{
+    return parent::query()->where('user_id', auth()->id());
+}
 
     public static function table(Table $table): Table
     {

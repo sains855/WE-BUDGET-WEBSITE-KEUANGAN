@@ -5,6 +5,7 @@ namespace App\Filament\Resources;
 use App\Filament\Resources\TransaksiResource\Pages;
 use App\Filament\Resources\TransaksiResource\RelationManagers;
 use App\Models\Transaksi;
+use App\Models\Kategori;
 use Filament\Forms;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
@@ -12,7 +13,6 @@ use Filament\Tables;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
-use Locale;
 
 class TransaksiResource extends Resource
 {
@@ -24,13 +24,16 @@ class TransaksiResource extends Resource
     {
         return $form
             ->schema([
+                Forms\Components\Select::make('kategori_id')
+                    ->relationship('kategori', 'nama')
+                    ->required()
+                    ->options(function () {
+                        return Kategori::where('user_id', auth()->id())->pluck('nama', 'id');
+                    }),
                 Forms\Components\TextInput::make('nama')
                     ->required()
                     ->maxLength(255),
                 Forms\Components\DatePicker::make('waktu')
-                    ->required(),
-                Forms\Components\select::make('kategori_id')
-                    ->relationship('kategori', 'nama')
                     ->required(),
                 Forms\Components\TextInput::make('Jumlah')
                     ->required()
@@ -41,6 +44,8 @@ class TransaksiResource extends Resource
                 Forms\Components\FileUpload::make('image')
                     ->image()
                     ->required(),
+                Forms\Components\Hidden::make('user_id')
+                    ->default(auth()->id())
             ]);
     }
 
@@ -61,12 +66,13 @@ class TransaksiResource extends Resource
                     ->falseIcon('heroicon-o-arrow-up-circle')
                     ->trueColor('danger')
                     ->falseColor('success'),
+                Tables\Columns\TextColumn::make('nama')
+                    ->searchable(),
                 Tables\Columns\TextColumn::make('waktu')
                     ->date()
                     ->sortable(),
                 Tables\Columns\TextColumn::make('Jumlah')
                     ->numeric()
-                    ->prefix('Rp. ')
                     ->sortable(),
                 Tables\Columns\TextColumn::make('catatan')
                     ->searchable(),
@@ -80,7 +86,7 @@ class TransaksiResource extends Resource
                     ->toggleable(isToggledHiddenByDefault: true),
             ])
             ->filters([
-                //
+                    //
             ])
             ->actions([
                 Tables\Actions\EditAction::make(),
@@ -91,11 +97,6 @@ class TransaksiResource extends Resource
                 ]),
             ]);
     }
-    protected function beforeSave($record): void
-{
-    $record->user_id = auth()->id();
-    dd($record);
-}
 
     public static function getRelations(): array
     {
