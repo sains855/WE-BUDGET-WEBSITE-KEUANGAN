@@ -30,7 +30,7 @@ class incomestsChart extends ChartWidget
 
         $data = Trend::query(Transaksi::query()
             ->where('user_id', auth()->id())
-            ->outcome())
+            ->income())
         ->between(
             start: $startDate,
             end: $endDate,
