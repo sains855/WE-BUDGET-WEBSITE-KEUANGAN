@@ -66,8 +66,6 @@ class TransaksiResource extends Resource
                     ->falseIcon('heroicon-o-arrow-up-circle')
                     ->trueColor('danger')
                     ->falseColor('success'),
-                Tables\Columns\TextColumn::make('nama')
-                    ->searchable(),
                 Tables\Columns\TextColumn::make('waktu')
                     ->date()
                     ->sortable(),
