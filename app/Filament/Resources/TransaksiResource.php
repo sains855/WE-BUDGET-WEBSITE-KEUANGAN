@@ -24,12 +24,10 @@ class TransaksiResource extends Resource
     {
         return $form
             ->schema([
+            
                 Forms\Components\Select::make('kategori_id')
                     ->relationship('kategori', 'nama')
-                    ->required()
-                    ->options(function () {
-                        return Kategori::where('user_id', auth()->id())->pluck('nama', 'id');
-                    }),
+                    ->required(),
                 Forms\Components\TextInput::make('nama')
                     ->required()
                     ->maxLength(255),
@@ -41,11 +39,12 @@ class TransaksiResource extends Resource
                 Forms\Components\TextInput::make('catatan')
                     ->required()
                     ->maxLength(255),
+                Forms\Components\TextInput::make('nama orang')
+                    ->required()
+                    ->maxLength(255),
                 Forms\Components\FileUpload::make('image')
                     ->image()
                     ->required(),
-                Forms\Components\Hidden::make('user_id')
-                    ->default(auth()->id())
             ]);
     }
 
@@ -53,19 +52,12 @@ class TransaksiResource extends Resource
     {
         return $table
             ->columns([
-                Tables\Columns\ImageColumn::make('kategori.image')
+                Tables\Columns\TextColumn::make('user_id')
+                    ->numeric()
                     ->sortable(),
-                Tables\Columns\TextColumn::make('kategori.nama')
-                    ->description(fn (Transaksi $record): string => $record->nama)
-                    ->label ('Transaksi')
-                    ->searchable(),
-                Tables\Columns\IconColumn::make('kategori.keterangan')
-                    ->label ('Pengeluaran')
-                    ->boolean()
-                    ->trueIcon('heroicon-o-arrow-down-circle')
-                    ->falseIcon('heroicon-o-arrow-up-circle')
-                    ->trueColor('danger')
-                    ->falseColor('success'),
+                Tables\Columns\TextColumn::make('kategori.id')
+                    ->numeric()
+                    ->sortable(),
                 Tables\Columns\TextColumn::make('nama')
                     ->searchable(),
                 Tables\Columns\TextColumn::make('waktu')
@@ -73,11 +65,12 @@ class TransaksiResource extends Resource
                     ->sortable(),
                 Tables\Columns\TextColumn::make('Jumlah')
                     ->numeric()
-                    ->money('IDR')
-                    ->formatStateUsing(fn ($state) => 'Rp. ' . number_format($state, 0, ',', '.'))
                     ->sortable(),
                 Tables\Columns\TextColumn::make('catatan')
                     ->searchable(),
+                    Tables\Columns\TextColumn::make('nama orang')
+                    ->searchable(),
+                Tables\Columns\ImageColumn::make('image'),
                 Tables\Columns\TextColumn::make('created_at')
                     ->dateTime()
                     ->sortable()
@@ -88,7 +81,7 @@ class TransaksiResource extends Resource
                     ->toggleable(isToggledHiddenByDefault: true),
             ])
             ->filters([
-                    //
+                //
             ])
             ->actions([
                 Tables\Actions\EditAction::make(),
