@@ -18,6 +18,7 @@ class Transaksi extends Model
         'user_id',
         'Jumlah',
         'catatan',
+        'nama orang',
         'image',
     ];
 
