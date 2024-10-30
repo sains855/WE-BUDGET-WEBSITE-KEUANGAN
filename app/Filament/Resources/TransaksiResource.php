@@ -68,7 +68,7 @@ class TransaksiResource extends Resource
                     ->sortable(),
                 Tables\Columns\TextColumn::make('catatan')
                     ->searchable(),
-                    Tables\Columns\TextColumn::make('nama orang')
+                Tables\Columns\TextColumn::make('nama orang')
                     ->searchable(),
                 Tables\Columns\ImageColumn::make('image'),
                 Tables\Columns\TextColumn::make('created_at')
