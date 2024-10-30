@@ -45,6 +45,8 @@ class TransaksiResource extends Resource
                 Forms\Components\FileUpload::make('image')
                     ->image()
                     ->required(),
+                Forms\Components\Hidden::make('user_id')
+                    ->default(state: auth ()->id())
             ]);
     }
 
