@@ -60,8 +60,22 @@ class TransaksiResource extends Resource
                 Tables\Columns\TextColumn::make('kategori.id')
                     ->numeric()
                     ->sortable(),
+<<<<<<< HEAD
                 Tables\Columns\TextColumn::make('nama')
                     ->searchable(),
+=======
+                Tables\Columns\TextColumn::make('kategori.nama')
+                    ->description(fn (Transaksi $record): string => $record->nama)
+                    ->label ('Transaksi')
+                    ->searchable(),
+                Tables\Columns\IconColumn::make('kategori.keterangan')
+                    ->label ('Pengeluaran')
+                    ->boolean()
+                    ->trueIcon('heroicon-o-arrow-down-circle')
+                    ->falseIcon('heroicon-o-arrow-up-circle')
+                    ->trueColor('danger')
+                    ->falseColor('success'),
+>>>>>>> 0703fda63a00d2f82187e291fd89610684fe40f8
                 Tables\Columns\TextColumn::make('waktu')
                     ->date()
                     ->sortable(),
