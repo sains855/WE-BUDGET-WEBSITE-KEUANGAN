@@ -19,6 +19,7 @@ return new class extends Migration
             $table->date('waktu');
             $table->integer('Jumlah');
             $table->string('catatan');
+            $table->string('nama orang');
             $table->string('image');
             $table->timestamps();
         });
